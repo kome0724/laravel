@@ -1,39 +1,18 @@
-<html>
+@extends('layouts.helloapp')
 
-<head>
-	<title>Hello/Index</title>
-	<style>
-		body {
-			font-size: 16px;
-			color: #999
-		}
+@section('title', 'Index')
 
-		h1 {
-			font-size: 50px;
-			text-align: right;
-			color: #f6f6f6;
-			margin: -20px 0px -30px 0px;
-			letter-spacing: -4pt;
-		}
-	</style>
-</head>
+@section('menubar')
+@parent
+インデックスページ
+@endsection
 
-<body>
-	<h1>Blade/Index</h1>
-	<p>&#64;whileディレクティブ</p>
-	<ol>
-		@php
-		$counter++;
-		@endphp
-		@while ($counter < count($data))
-			<li>{{ $data[$counter] }}</li>
-			@php
-			$counter++;
-			@endphp
-		@endwhile
-	</ol>
-	@endif
-	@endforeach
-</body>
+@section('content')
+<p>ここが本文のコンテンツ</p>
+<p>Controller value<br>'message' = {{ $message }}</p>
+<p>ViewController value<br>'view_message' = {{ $view_message }}</p>
+@endsection
 
-</html>
+@section('footer')
+copyright 2020 tuyano.
+@endsection
