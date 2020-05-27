@@ -18,6 +18,6 @@ Route::get('/', function () {
 	return view('welcome');
 });
 
-Route::get('hello','HelloController@Index')->middleware('helo');
+Route::get('hello','HelloController@Index');
 
 Route::post('hello','HelloController@post');

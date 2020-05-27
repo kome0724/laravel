@@ -25,7 +25,7 @@
     </tr>
     <tr>
         <th></th>
-        <td><input type="submit" value="sen"></td>
+        <td><input type="submit" value="send"></td>
     </tr>
 </form>
 @endsection
