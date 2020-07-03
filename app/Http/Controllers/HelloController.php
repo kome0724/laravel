@@ -25,11 +25,18 @@ class HelloController extends Controller
 
     public function post(Request $request)
     {
-        $validator = Validator::make($request->all(),[
+        $rules = [
             'name'=>'required',
             'mail'=>'email',
             'age'=>'numeric|between:0,150',
-        ]);
+        ];
+        $messages=[
+            'name.required'=>'名前を入力してください',
+            'mail.email'=>'メールアドレスを入力してください',
+            'age.numeric'=>'整数で入力してください',
+            'age.between'=>'0~150で入力'
+        ];
+        $validator = Validator::make($request->all(),$rules,$messages);
         if($validator->fails()){
             return redirect('/hello')
                 ->withErrors($validator)
